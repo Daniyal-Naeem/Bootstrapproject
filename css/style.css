@@ -48,4 +48,9 @@ body{
     cursor: pointer;
     text-align: center;
   }
- 
+ .card-header{
+    background-color: rgb(245, 219, 75);
+    color: rgb(248, 242, 242);
+    font-size: 18px;
+    font: outline;
+ }
