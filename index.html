@@ -37,7 +37,7 @@
                </ul> 
           
                <span class="navbar-text">
-                <a data-toggle="modal" data-target="#loginModal">
+                <a data-toggle="modal" data-target="#loginModel">
                 <span class="fa fa-sign-in"></span> Login</a>
             </span>
             </div>           
@@ -46,7 +46,7 @@
     </nav>
 
 
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="loginModel" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -98,8 +98,8 @@
                 <div class="col-12 col-sm-3 align-self-center">
                     
                  <a role="button" class="btn btn-block nav-link btn-warning"
-                    data-html="true"  title="Or Call us at  <br> <strong>+852 12345678 </strong>"
-                    data-placement="bottom" data-toggle="modal" data-target="#reserveModal">Reserve Table</a> 
+                      title="Or Call us at  <br> <strong>+852 12345678 </strong>"
+                      data-toggle="modal" data-target="#myModal">Reserve Table</a> 
                  
                 </div>
                   
@@ -321,7 +321,7 @@
         </div>
     </footer>
 
-    <div id="reserveModal" class="modal " role="dialog">
+    <div id="myModal" class="modal " role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -394,12 +394,34 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+        
+        
+        <!-- ASSIGNMENT 4 ----  jQuery. Model  -->
+        <!-- Added the appropriate JavaScript code-->
         <script>
-            $(document).ready(function(){
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
+            $('#loginModel').on('show.bs.modal', function (e) {
+                var button = e.relatedTarget;
+                if($(button).hasClass('no-modal')) {
+                  e.stopPropagation();
+                }  
+              });
+    
+            </script>
+
             <script>
+        $('#myModal').on('show.bs.modal', function (e) {
+            var button = e.relatedTarget;
+            if($(button).hasClass('no-modal')) {
+              e.stopPropagation();
+            }  
+          });
+
+        </script>
+
+           
+           
+           <script>
                            $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
